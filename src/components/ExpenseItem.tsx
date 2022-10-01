@@ -1,14 +1,25 @@
-import Flex from "./utils/Flex";
+import { Flex } from "./utils/Flex";
 import "./ExpenseItem.css";
 import React from "react";
+import { Typography } from "@mui/material";
 
-const ExpenseItem = (): JSX.Element => {
+interface Props {
+  date: Date;
+  title: string;
+  amount: number;
+}
+
+const ExpenseItem = ({ date, title, amount }: Props): JSX.Element => {
   return (
     <Flex>
-      <Flex className={"expense-item"}>Março</Flex>
+      <Flex className={"expense-item"}>
+        <Typography>{date.toDateString()}</Typography>
+      </Flex>
       <Flex className={"expense-item__description"}>
-        Seguro
-        <Flex className={"expense-item__price"}>R$200,00</Flex>
+        <Typography>{title}</Typography>
+        <Flex className={"expense-item__price"}>
+          <Typography>{amount}</Typography>
+        </Flex>
       </Flex>
     </Flex>
   );
