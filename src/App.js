@@ -1,4 +1,4 @@
-import ExpenseItem from "./components/ExpenseItem";
+import { Expenses } from "./components/Expenses/Expenses";
 import { Flex } from "./components/utils/Flex";
 
 function App() {
@@ -25,16 +25,7 @@ function App() {
   ];
   return (
     <Flex direction="column">
-      {expenses.map((expense) => {
-        return (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        );
-      })}
+      <Expenses expenses={expenses} />
     </Flex>
   );
 }
