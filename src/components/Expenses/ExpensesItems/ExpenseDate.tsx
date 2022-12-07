@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { Flex } from "../../utils/Flex";
+import { Flex } from "../../UI/Flex";
 import "./ExpenseDate.css";
 
 interface Props {

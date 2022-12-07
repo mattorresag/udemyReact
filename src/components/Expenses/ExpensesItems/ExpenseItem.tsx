@@ -1,6 +1,6 @@
-import { Flex } from "../../utils/Flex";
+import { Flex } from "../../UI/Flex";
 import "./ExpenseItem.css";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { ExpenseDate } from "./ExpenseDate";
 
 interface Props {
@@ -21,6 +21,7 @@ const ExpenseItem = ({ date, title, amount }: Props): JSX.Element => {
           <Typography>{amount}</Typography>
         </Flex>
       </Flex>
+      <Button>Clique aqui</Button>
     </Flex>
   );
 };
