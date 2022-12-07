@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Expenses } from "./components/Expenses/Expenses";
-import { Flex } from "./components/utils/Flex";
+import { ExpenseData } from "./components/NewExpenses/ExpenseForm";
+import NewExpense from "./components/NewExpenses/NewExpense";
+import { Flex } from "./components/UI/Flex";
 
 function App() {
-  const expenses = [
+  const [expenses, setExpenses] = useState<ExpenseData[]>([
     {
       id: "e1",
       title: "Toilet Paper",
@@ -22,9 +25,15 @@ function App() {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
-  ];
+  ]);
+
+  const addNewExpense = (expense: ExpenseData) => {
+    setExpenses((oldState) => [...oldState, expense])
+  }
+
   return (
     <Flex direction="column">
+      <NewExpense addNewExpense={addNewExpense}/>
       <Expenses expenses={expenses} />
     </Flex>
   );
